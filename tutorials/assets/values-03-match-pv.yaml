@@ -1,23 +1,21 @@
 servingEngineSpec:
   runtimeClassName: ""
   modelSpec:
-  - name: "llama3"
+  - name: "qwen2"
     repository: "vllm/vllm-openai"
     tag: "latest"
-    modelURL: "meta-llama/Llama-3.1-8B-Instruct"
+    modelURL: "Qwen/Qwen2-7B"
     replicaCount: 1
 
-    requestCPU: 10
-    requestMemory: "16Gi"
+    requestCPU: 4
+    requestMemory: "25Gi"
     requestGPU: 1
 
     pvcStorage: "50Gi"
     pvcAccessMode:
       - ReadWriteOnce
     pvcMatchLabels:
-      model: "llama3-pv"
+      model: "qwen2-pv"
 
     vllmConfig:
-      maxModelLen: 4096
-
-    hf_token: <YOUR HF TOKEN>
+      dtype: "float16"

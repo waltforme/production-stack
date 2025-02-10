@@ -181,8 +181,8 @@ routerSpec:
   # -- router resource requests and limits
   resources:
     requests:
-      cpu: "4"
-      memory: "16G"
+      cpu: "2"
+      memory: "4G"
     limits:
       cpu: "8"
       memory: "32G"
